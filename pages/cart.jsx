@@ -24,7 +24,7 @@ const Cart = () => {
 
   const createOrder = async (data) => {
     try {
-      const res = await axios.post("/api/orders", data);
+      const res = await axios.post(process.env.API_URL+"/api/orders", data);
       if (res.status === 201) {
         dispatch(reset());
         router.push(`/orders/${res.data._id}`);
@@ -148,13 +148,13 @@ const Cart = () => {
         <div className={styles.wrapper}>
           <h2 className={styles.title}>CART TOTAL</h2>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Subtotal:</b>${cart.total}
+            <b className={styles.totalTextTitle}>Subtotal: ${cart.total}</b>
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Discount:</b>$0.00
+            <b className={styles.totalTextTitle}>Discount: $0.00</b>
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>${cart.total}
+            <b className={styles.totalTextTitle}>Total: ${cart.total}</b>
           </div>
           {open ? (
             <div className={styles.paymentMethods}>
