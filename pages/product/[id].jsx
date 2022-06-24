@@ -64,7 +64,7 @@ const Product = ({ pizza }) => {
             <span className={styles.number}>Large</span>
           </div>
         </div>
-        <h3 className={styles.choose}>Choose additional ingredients</h3>
+        <h2 className={styles.choose}>Choose additional ingredients</h2>
         <div className={styles.ingredients}>
           {pizza.extraOptions.map((option) => (
             <div className={styles.option} key={option._id}>
